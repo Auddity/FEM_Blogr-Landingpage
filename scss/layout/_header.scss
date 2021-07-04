@@ -1,0 +1,91 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+
+.header {
+  background-image: v.$intro-cta-grd;
+  height: 600px;
+  padding: 4.5rem 0 0;
+  position: relative;
+  border-bottom-left-radius: 11rem;
+  z-index: 1;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/bg-pattern-intro.svg');
+    background-repeat: no-repeat;
+    background-position: 35% 37%;
+    background-size: 1350px;
+    border-bottom-left-radius: 12rem;
+    z-index: 0;
+  }
+
+  @include mx.mq(768px) {
+    padding-bottom: 3.5rem;
+  }
+
+  .nav-container, &-content, .start-btn-container {
+    position: relative;
+  }
+
+  .nav-container {
+    @include mx.flexSpaceBetween;
+    margin-bottom: 12rem;
+    @include mx.mq(1067px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .hamburg-container {
+    cursor: pointer;
+    @include mx.mq(1067px) {
+      display: none;
+    }
+    
+  }
+
+  &-content {
+    text-align: center;
+    color: #fefefe;
+    line-height: 1.4;
+
+    h1 {
+      color: inherit;
+      padding: 0 1rem;
+      @include mx.mq(768px) {
+        font-size: 3.8rem;
+      }
+      @include mx.mq(1067px) {
+        font-size: 5.8rem;
+      }
+    }
+
+    P {
+      font-size: 1.7rem;
+      letter-spacing: .4px;
+      font-weight: 400;
+      padding: 1.5rem 1rem 6rem;
+      @include mx.mq(1067px) {
+        font-size: 2.6rem;
+      }
+    }
+  }
+
+  .start-btn-container {
+    @include mx.flexSpaceBetween;
+    text-align: center;
+    padding: 0 1.5rem;
+    @include mx.mq(700px) {
+      justify-content: center;
+      
+      a:first-child {
+        margin-right: 2rem;
+      }
+    }
+  }
+}

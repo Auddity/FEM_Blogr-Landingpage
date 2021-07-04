@@ -1,0 +1,36 @@
+// Flex Mixins
+%flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexCenter {
+  @extend %flex;
+  justify-content: center;
+}
+
+@mixin flexStart {
+  @extend %flex;
+  justify-content: flex-start;
+}
+
+@mixin flexSpaceBetween {
+  @extend %flex;
+  justify-content: space-between;
+}
+
+// Font Color Function
+@function setTextColor($color) {
+  @if(lightness($color) < 100) {
+    @return #121212;
+  } @else {
+    @return #fefefe;
+  }
+}
+
+// Media Query Mixin
+@mixin mq($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}

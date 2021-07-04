@@ -1,0 +1,28 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+
+// Button Types
+.btn {
+  padding: 1.5rem 2rem;
+  border-radius: 4rem;
+}
+
+.btn:active, .btn:focus {
+  outline: none;
+}
+
+.white-bg {
+  background: #fefefe;
+  color: v.$cta-text;
+}
+
+.clear-bg {
+  color: #fefefe;
+  border: 1px solid #fefefe;
+}
+
+.sign-up {
+  background-image: v.$intro-cta-grd;
+  color: #fefefe;
+  padding: 1.5rem 3.5rem;
+}

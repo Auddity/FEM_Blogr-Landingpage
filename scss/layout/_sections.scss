@@ -1,0 +1,166 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+
+// Introduction Section
+.introduction {
+  @include mx.mq(1067px) {
+    padding-top: 6rem;
+  }
+
+  h2 {
+    margin-bottom: 4rem;
+    @include mx.mq(1067px) {
+      margin-bottom: 11rem;
+      font-size: 3.5rem;
+    }
+  }
+
+  .intro-content {
+    @include mx.flexCenter;
+    flex-direction: column;
+    @include mx.mq(1067px) {
+      display: flex;
+      flex: 1;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 0;
+    }
+
+    .intro-text-content {
+      line-height: 1.5;
+      @include mx.mq(1067px) {
+        flex-basis: 50%;
+        text-align: left;
+        line-height: 1.8;
+        padding: 0 4% 0 8%;
+      }
+
+      h3 {
+        padding: 0 4rem;
+        @include mx.mq(1067px) {
+          padding: 0;
+        }
+      }
+  
+      p {
+        padding-bottom: 3.5rem;
+      }
+    }
+
+    .intro-graphic-container {
+      flex-basis: 50%;
+      min-height: 100%;
+      @include mx.mq(1067px) {
+        .desk-img {
+          position: absolute;
+          top: -22rem;
+          right: -31rem;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+// Infrastructure Section
+.infrastructure {
+  background-image: v.$body-bg-grd;
+  border-top-right-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+  margin: 25rem 0 4rem;
+  color: #fefefe;
+  position: relative;
+  @include mx.flexCenter;
+  flex-direction: column;
+  @include mx.mq(1067px) {
+    flex-direction: row;
+    text-align: left;
+    margin-top: 26rem;
+    margin-bottom: 20rem;
+    padding: 6rem 15rem 6rem 8rem;
+  }
+  
+  .infra-img-container {
+    position: absolute;
+    inset: -20rem 0 0 0;
+    @include mx.mq(1067px) {
+      position: relative;
+      inset: -13rem 0 0 0;
+      height: 30rem;
+      flex-basis: 50%;
+    }
+    
+    .infra-img {
+      width: 38rem;
+      @include mx.mq(1067px) {
+        width: initial;
+      }
+    }
+  }
+  
+  .infra-content {
+    padding: 20rem 0 10rem;
+    @include mx.mq(1067px) {
+      flex-basis: 50%;
+      padding: 0 4% 0 4%;
+    }
+
+    h3 {
+      color: inherit;
+      font-size: 3.2rem;
+      letter-spacing: 1.8px;
+    }
+  }
+}
+
+// Free, Simple & Tooling Section
+.freeSimple {
+  @include mx.flexCenter;
+    flex-direction: column;
+    @include mx.mq(1067px) {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 6rem;
+      position: relative;
+      z-index: 0;
+    }
+
+  .freeSimple-text-content {
+    line-height: 1.5;
+    @include mx.mq(1067px) {
+      flex-basis: 50%;
+      text-align: left;
+      line-height: 1.8;
+      padding: 0 8% 0 2%;
+    }
+
+    h3 {
+      padding: 0 4rem;
+      @include mx.mq(1067px) {
+        padding: 0;
+      }
+    }
+
+    p {
+      padding-bottom: 3.5rem;
+    }
+  }
+
+  .comp-graphic-container {
+    flex-basis: 50%;
+    min-height: 100%;
+    @include mx.mq(1067px) {
+      .desk-img {
+        position: absolute;
+        top: -12rem;
+        left: -28rem;
+        z-index: 1;
+      }
+    }
+  }
+}

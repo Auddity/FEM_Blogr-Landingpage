@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+
+// Container
+.container {
+  width: 85%;
+  max-width: 130rem;
+  margin: 0 auto;
+}
+
+// Display
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+// Page illustrations
+.mobile-img {
+  @include mx.mq(1067px) {
+    display: none;
+  }
+}
+
+.desk-img {
+  display: none;
+  @include mx.mq(1067px) {
+    display: block;
+  }
+}
